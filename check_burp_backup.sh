@@ -15,9 +15,6 @@
 # BURP check backup nagios plugin
 # Read the last log file from a BURP backup and check age and warning of backup.
 #
-# Pierre Guillot
-# pierre_guillot [AT] yahoo.fr
-# V1.1
 # TODO
 # * Statistics gathering and state of backup depending of BURP version (use backup_stats if it exists, and fall back to log.gz)
 # * Choose number of error for CRITICAL level
@@ -128,8 +125,8 @@ DELETED=$(grep "Grand total" $TMP | awk '{print $6}')
 TOTAL=$(grep "Grand total" $TMP | awk '{print $7}')
 
 # date gathering
-DATE=$(grep "End time" $TMP | awk '{print $3}')
-HEURE=$(grep "End time" $TMP | awk '{print $4}')
+DATE=$(grep "End time: " $TMP | awk '{print $3}')
+HEURE=$(grep "End time: " $TMP | awk '{print $4}')
 
 ENDSTAMP=$(date -d "$DATE $HEURE" +%s)
 NOW=$(date +%s)
