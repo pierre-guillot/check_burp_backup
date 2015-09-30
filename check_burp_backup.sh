@@ -137,7 +137,7 @@ LASTDIFF=$(convertToSecond $LAST)
 
 if [ $PERFDATAOPT -eq 1 ]
 then
-	PERFDATA=$(echo "|" warnings=$WARNINGS; new=$NEW; changed=$CHANGED; unchanged=$UNCHANGED; deleted=$DELETED; total=$TOTAL)
+	PERFDATA=$(echo "| warnings=$WARNINGS; new=$NEW; changed=$CHANGED; unchanged=$UNCHANGED; deleted=$DELETED; total=$TOTAL")
 fi
 
 # Clean tempory file
